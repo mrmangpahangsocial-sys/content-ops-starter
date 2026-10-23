@@ -41,7 +41,7 @@ function Page(props) {
 
 export function getStaticPaths() {
     const data = allContent();
-    const paths = resolveStaticPaths(data);
+    const paths = resolveStaticPaths(data).filter((path) => path !== '/');
     return { paths, fallback: false };
 }
 
